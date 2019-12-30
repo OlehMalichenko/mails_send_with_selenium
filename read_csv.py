@@ -11,7 +11,7 @@ class ReadCsv():
 
     def _read_from_csv(self):
         try:
-            with open('dou_data_test.csv', newline='\n', encoding='utf8') as file:
+            with open('dou_data.csv', newline='\n', encoding='utf8') as file:
                 reader = csv.reader(file)
                 result = list()
                 for line in reader:

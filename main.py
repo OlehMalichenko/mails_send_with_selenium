@@ -21,8 +21,11 @@ def main():
         return
 
     # iterate over data
+    count = 0
     for dic in data:
         work_with_one_mail(dic, driver_in_box)
+        count = count + 1
+        print(str(count))
 
     driver_in_box.close()
 
