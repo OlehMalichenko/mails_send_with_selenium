@@ -1,4 +1,5 @@
 import csv
+from pprint import pprint
 
 class ReadSent():
 
@@ -10,14 +11,7 @@ class ReadSent():
                 mails.append(line[0])
             return mails
 
-
-class CheckSent():
-
-    def __init__(self, mails: list):
-        self.mails = mails
-
-    def check(self, mail):
-        if mail in self.mails:
-            return False
-        else:
-            return True
+if __name__=='__main__':
+    data = ReadSent().get_data()
+    pprint(data)
+    print(len(data))

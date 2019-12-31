@@ -5,6 +5,7 @@ from read_csv import ReadCsv
 from write_csv import WriteCsv
 from pprint import pprint
 from datetime import datetime
+from check_sent import ReadSent
 
 
 def main():
@@ -20,9 +21,17 @@ def main():
         driver_in_box.close()
         return
 
+    sent_mails = ReadCsv().get_data()
+
     # iterate over data
     count = 0
     for dic in data:
+        try:
+            email = dic['email']
+        except:
+            continue
+        if email in sent_mails:
+            continue
         work_with_one_mail(dic, driver_in_box)
         count = count + 1
         print(str(count))
